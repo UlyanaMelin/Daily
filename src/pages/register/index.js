@@ -141,7 +141,7 @@ const Register = ({handleNext}) => {
                 fontWeight: '400',
                 lineHeight: '20px',
                 textAlign: 'left',
-                textEdge: 'cap',
+                opacity:'0,9'
                 }}>
                   Детали аккаунта
               </Typography>
@@ -181,6 +181,7 @@ const Register = ({handleNext}) => {
                 fontWeight: '400',
                 lineHeight: '20px',
                 textAlign: 'left',
+                opacity:'0,9'
                 }}>
                   Введите информацию
               </Typography>
@@ -221,6 +222,7 @@ const Register = ({handleNext}) => {
                 fontWeight: '400',
                 lineHeight: '20px',
                 textAlign: 'left',
+                opacity:'0,9'
                 }}>
                   Информация о сотрудниках
               </Typography>
@@ -252,6 +254,7 @@ const Register = ({handleNext}) => {
                 fontWeight: '600',
                 lineHeight: '21px',
                 textAlign: 'left',
+                opacity:'0.'
                 }}>
                   Конструктор тарифа
               </Typography>
@@ -261,6 +264,7 @@ const Register = ({handleNext}) => {
                 fontWeight: '400',
                 lineHeight: '20px',
                 textAlign: 'left',
+                opacity:'0.5'
                 }}>
                   Настройка опций
               </Typography>
@@ -299,7 +303,7 @@ const Register = ({handleNext}) => {
         <Grid container spacing={5} >
           <Grid item xs={12} sm={6} >
             <FormControl fullWidth>
-              <CustomTextField fullWidth label='Имя пользователя' placeholder='Введите ваш e-mail' />
+              <CustomTextField fullWidth label='Имя пользователя' placeholder='Введите username' />
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -442,7 +446,8 @@ const Register = ({handleNext}) => {
   //               fontWeight: '400',
   //               lineHeight: '20px',
   //               textAlign: 'left',
-  //               textEdge: 'cap',
+                  
+                
   //               }}>
   //                 Детали аккаунта
   //             </Typography>
@@ -1712,7 +1717,10 @@ const Register = ({handleNext}) => {
   //         display:'flex',
   //       }}>
 
-  //       <Grid container xs={8} sx={{background:'white', height:'100%', mr:'50px'}}>
+  //       <Grid container xs={8} sx={{
+  //         background:'white', height:'100%', 
+  //         mr:'50px',
+  //       }}>
 
   //         <Box sx={{mb:'50px'}} >
   //           <Typography variant='h3' sx={{
@@ -1746,18 +1754,20 @@ const Register = ({handleNext}) => {
   //         <Box sx={{
   //           background:'white',
   //           display:'flex',
-  //           flexDirection:'row-reverse',
-  //           mb:'100px'
+  //           mb:'100px',
+  //           display:'flex',
+  //           flexDirection:'row-reverse'
+
+  //           // overflowY:'scroll',
+  //           // maxHeight:'300px'
   //         }}>
 
   //         <Box sx={{
-  //           minWidth:'10px',
-  //           background:'blue',
-  //           height:'445px',
-  //           borderRadius: '30px',
-  //           background: 'var(--brand-bright-blue, #006CEF)',
-  //           boxShadow: '0px 2px 4px 0px rgba(165, 163, 174, 0.30)'
-  //           }}>
+  //           background:'rgba(0, 108, 239, 1)',
+  //           width:'20px',
+  //           minHeight:'445px',
+  //           borderRadius:'30px'
+  //         }}>       
   //         </Box>
           
   //         <Box sx={{

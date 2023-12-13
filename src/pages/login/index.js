@@ -74,7 +74,7 @@ const RightWrapper = styled(Box)(({ theme }) => ({
 
 const LinkStyled = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
-  color: `${theme.palette.primary.main} !important`
+  color: 'rgba(0, 108, 239, 1)'
 }))
 
 const FormControlLabel = styled(MuiFormControlLabel)(({ theme }) => ({
@@ -145,10 +145,49 @@ const LoginPage = () => {
           type: 'manual',
   
           // message: 'Email or Password is invalid'
-          message: 'Почта не найдена. Возможно нужно зарегистрироваться или подтвердить регистрацию ранее созданного аккаунта.'
+          message: 'Почта не найдена. Возможно нужно зарегистрироваться или подтвердить регистрацию ранее созданного аккаунта.',
+         
         })
     })
   }
+
+  const CustomErrorComponentEmail = () => (
+    <Box sx={{
+      display:'flex',
+      alignItems:'center'
+    }}>
+      <Box sx={{mr:'5px'}}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <circle cx="12" cy="12.5" r="9" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 8.5V12.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11.9999 16.5H12.0099" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      </Box>
+      <span sx={{
+      }}>
+        Почта не найдена. Возможно нужно зарегистрироваться или подтвердить регистрацию ранее созданного аккаунта.
+      </span>
+    </Box>
+  );
+
+  const CustomErrorComponentPassword = () => (
+    <Box sx={{
+      display:'flex',
+      alignItems:'center'
+    }}>
+      <Box sx={{mr:'5px'}}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <circle cx="12" cy="12.5" r="9" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 8.5V12.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11.9999 16.5H12.0099" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      </Box>
+      <span sx={{
+      }}>
+        Неверный пароль. Повторите попытку.
+      </span>
+    </Box>
+  );
 
 //  ЭКРАН 1 И 4 (с ошибкой почта не найдена)
 
@@ -192,7 +231,7 @@ return (
               lineHeight: '36px',
               letterSpacing: '0px',
               textAlign: 'left',
-              marginBottom: '10px'
+              mb: '10px'
               }}>
               Добро пожаловать в Daily
             </Typography>
@@ -210,7 +249,8 @@ return (
           </Box>
          
           <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-            <Box sx={{ mb: 4,
+            <Box sx={{ 
+              mb:'24px',
               width: 'Fill (400px)',
               height: 'Hug (48px)',
               borderRadius: '8px',
@@ -237,10 +277,10 @@ return (
                     onChange={onChange}
                     placeholder='Введите ваш e-mail'
                     error={Boolean(errors.email)}
-                    {...(errors.email && { helperText: 'перевести это все' })}
+                    helperText={ errors.email ? < CustomErrorComponentEmail/> : null}
                   />
                 )}
-              />
+              />    
             </Box>
 
             <Box
@@ -254,6 +294,31 @@ return (
             >
             </Box>
           </form>
+
+          <Box sx={{mb:'24px'}}>
+            {errors.email && 
+              <Typography sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              color:'rgba(0, 108, 239, 1)', 
+              fontSize:'15px',
+              fontWeight:'500',
+              lineHeight:'22px',
+              justifyContent: 'center', '& svg': { mr: 1 }, }}>
+              <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', '& svg': { mr: 1 } }}>
+                <LinkStyled href='/login' sx={{ 
+                  color: 'rgba(0, 108, 239, 1)', 
+                  mr: 2 , 
+                  fontWeight:'400', 
+                  fontSize:'15px',
+                  lineHeight:'22px'
+                  }}>
+                  <span>Регистрация</span>
+                </LinkStyled>
+              </Typography>
+              </Typography>
+            }
+          </Box>
           
           <Box sx={{ my: 6 }}>           
             <Divider sx={{my:6, 
@@ -393,7 +458,7 @@ return (
   </Box>
 )
 
-// ЭКРАН 2 B 3 (с ошибкой для пароля)
+// ЭКРАН 2 И 3 (с ошибкой для пароля)
 
 // return (
 //   <Box className='content-right' sx={{ backgroundColor: 'background.paper'}}>
@@ -472,16 +537,17 @@ return (
 //               rules={{ required: true }}
 //               render={({ field: { value, onChange, onBlur } }) => (
 //                 <CustomTextField
-//                   fullWidth
-//                   autoFocus
-//                   label='Email'
-//                   value={value}
-//                   onBlur={onBlur}
-//                   onChange={onChange}
-//                   placeholder='Введите ваш e-mail'
-//                   error={Boolean(errors.email)}
-//                   {...(errors.email && { helperText: errors.email.message })}
-//                 />
+//                 fullWidth
+//                 autoFocus
+//                 label='Email'
+//                 value={value}
+//                 onBlur={onBlur}
+//                 onChange={onChange}
+//                 placeholder='Введите ваш e-mail'
+
+//                 // error={Boolean(errors.email)}
+//                 // helperText={ errors.email ? <CustomErrorComponentEmail/> : null}
+//               />
 //               )}
 //             />
 //             {console.log(errors)}
@@ -500,7 +566,7 @@ return (
 //                     onChange={onChange}
 //                     id='auth-login-v2-password'
 //                     error={Boolean(errors.password)}
-//                     {...(errors.password && { helperText: errors.password.message })}
+//                     helperText={ errors.password ? <CustomErrorComponentPassword/> : null}
 //                     type={showPassword ? 'text' : 'password'}
 //                     InputProps={{
 //                       endAdornment: (
@@ -510,7 +576,7 @@ return (
 //                             onMouseDown={e => e.preventDefault()}
 //                             onClick={() => setShowPassword(!showPassword)}
 //                           >
-//                             <Icon fontSize='1.25rem' icon={showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
+//                             <Icon fontSize='1.25rem' color='rgba(234, 84, 85, 1)' icon={showPassword ? 'tabler:eye' : 'tabler:eye-off'} />
 //                           </IconButton>
 //                         </InputAdornment>
 //                       )
