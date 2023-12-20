@@ -47,7 +47,7 @@ import themeConfig from 'src/configs/themeConfig'
 // Styled Components
 const ForgotPasswordIllustration = styled('img')(({ theme }) => ({
   zIndex: 2,
-  objectFit: 'cover', //от Саши
+  objectFit: 'cover', 
   width: '100%',
   height: '100%',
   borderRadius: '6px'
@@ -95,7 +95,7 @@ const CustomErrorComponentEmail = () => (
   <Box sx={{
     display:'flex',
     alignItems:'center',
-    position: 'absolute' // от Паши
+    position: 'absolute' 
   }}>
     <Box sx={{mr:'5px'}}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -256,7 +256,7 @@ const ForgotPassword = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            p: '0 0 0 3rem' //от Паши
+            p: '0 0 0 3rem' 
           }}
         >
           <Box sx={{ width: '100%', maxWidth: 400 }}>
@@ -403,7 +403,7 @@ const ForgotPassword = () => {
   //           display: 'flex',
   //           alignItems: 'center',
   //           justifyContent: 'center',
-  //           p: '0 0 0 3rem' //от Паши
+  //           p: '0 0 0 3rem' 
   //         }}
   //       >
   //         <Box sx={{ width: '100%', maxWidth: 400 }}>
@@ -525,7 +525,7 @@ const ForgotPassword = () => {
   //           display: 'flex',
   //           alignItems: 'center',
   //           justifyContent: 'center',
-  //           p: '0 0 0 3rem' //от Паши
+  //           p: '0 0 0 3rem' 
   //         }}
   //       >
   //         <Box sx={{ width: '100%', maxWidth: 400 }}>
@@ -645,7 +645,7 @@ const ForgotPassword = () => {
   //           display: 'flex',
   //           alignItems: 'center',
   //           justifyContent: 'center',
-  //           p: '0 0 0 3rem' //от Паши
+  //           p: '0 0 0 3rem' 
   //         }}
   //       >
   //         <Box sx={{ width: '100%', maxWidth: 400 }}>
